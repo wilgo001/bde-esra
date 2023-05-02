@@ -1,0 +1,29 @@
+.admin-sweat-params.container {
+    display: flex;
+    margin: 20px;
+    width: calc(100% - 40px);
+    width: calc(100% - 40px);
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 10px;
+}
+
+.admin-sweat-params.sweat-item {
+    height: 394px;
+    width: 244px;
+    border-radius: 30px;
+}
+
+.admin-sweat-params.sweat-item.add-new {
+    border: dashed 3px var(--dark-bg-color);
+}
+
+.admin-sweat-params.add-new-btn {
+    color: var(--dark-bg-color);
+    width: 60px;
+    height: 60px;
+    margin: 180px 95px;
+}

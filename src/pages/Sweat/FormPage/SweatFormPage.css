@@ -1,0 +1,38 @@
+.form.container {
+    background-color: var(--dark-bg-color);
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.form.sub-page-container {
+    margin: 50px;
+    padding: 30px;
+    width: calc(100% - 160px);
+    background-color: white;
+    border-radius: 30px;
+}
+
+.form.btn-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form.btn {
+    padding: 10px 30px;
+    border-radius: 20px;
+    color: white;
+    background-color: var(--dark-bg-color);
+    border: solid 3px white;
+    text-transform: uppercase;
+}
+
+.form.btn:hover {
+    color: var(--dark-bg-color);
+    background-color: white;
+}

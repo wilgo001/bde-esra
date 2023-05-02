@@ -1,0 +1,36 @@
+.input-radio.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-radio.label {
+    font-size: 1.7rem;
+    margin: 0 5px;
+}
+
+.input-radio.options {
+    display: flex;
+    flex-direction: row;
+}
+
+.input-radio.option-container {
+    margin: 10px 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.input-radio.option-label {
+    font-size: 1.6rem;
+    margin: 0;
+    display: block;
+    height: 16px;
+    line-height: 16px;
+}
+
+.input-radio.option-btn {
+    margin: 0 5px;
+    display: block;
+    line-height: 16px;
+    height: 16px;
+    width: 16px;
+}
