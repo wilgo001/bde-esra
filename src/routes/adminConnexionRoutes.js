@@ -183,6 +183,25 @@ export const useAdminSweatsPUT = (id) => {
     })
 }
 
+export const useAdminOneSweatDELETE = (id) => {
+    const token = useSelector((state) => state.adminLog.token);
+    const requestOption = {
+        method: "DELETE",
+        headers: {
+            Authorization: "Bearer " + token,
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            id: id,
+        })
+    }
+    return(async () => {
+        return await fetch(`${BACKEND_URL}admin/sweat`, requestOption)
+            .then(rsp => rsp.json())
+            .then(data => data);
+    })
+}
+
 // const useAdminLoggedInGET = () => {
 //     const isLogged = useSelector((state) => state.adminLog.isLogged);
 //     const token = useSelector((state) => state.adminLog.token);

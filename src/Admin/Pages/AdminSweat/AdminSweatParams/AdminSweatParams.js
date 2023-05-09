@@ -36,6 +36,7 @@ const AdminSweatParams = (props) => {
                     promo={sweat.promo}
                     files={sweat.filenames}
                     color={sweat.color}
+                    reloadData={() => fetch()}
                     className="admin-sweatparams sweat-item"/>
             )}
             <div  className="admin-sweat-params add-new sweat-item" onClick={(e) => {onAddSweat(e)}} >

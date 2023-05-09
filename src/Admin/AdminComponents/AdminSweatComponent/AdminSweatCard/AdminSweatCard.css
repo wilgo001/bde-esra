@@ -8,6 +8,7 @@
     width: 240px;
     height: 360px;
     color: white;
+    position: relative;
 }
 
 .admin-sweat-image-editor.image-table {
@@ -48,4 +49,17 @@
 
 .admin-sweat-image-editor.color-demo {
     height: 10px;
+}
+
+.admin-sweat-image-editor.delete-card {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 20;
+    height: 30px;
+    transform: translate(5px, -5px);
+    border-radius: 15px;
+    border: -1px;
+    color: var(--dark-bg-color);
+    background-color: white;
 }

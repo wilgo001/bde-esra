@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { InputSelect, InputText } from "../../../../Components";
-import { useAdminOneSweatGET, useAdminSweatImageDELETE, useAdminSweatImagesGET, useAdminSweatImagePOST, useAdminSweatsPUT } from "../../../../routes/adminConnexionRoutes";
+import { useAdminOneSweatGET, useAdminSweatImageDELETE, useAdminSweatImagesGET, useAdminSweatImagePOST, useAdminSweatsPUT, useAdminOneSweatDELETE } from "../../../../routes/adminConnexionRoutes";
 import "./AdminSweatCard.css";
 import AdminSweatImageViewer from "../AdminSweatImageViewer/AdminSweatImageViewer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleXmark as faCircleXmarkRegular } from "@fortawesome/free-regular-svg-icons";
 
 const promoList = [
     "ESRA",
@@ -17,6 +19,7 @@ const AdminSweatCard = (props) => {
     const className = props.className;
     const getSweat = useAdminOneSweatGET(id);
     const putSweat = useAdminSweatsPUT(id);
+    const deleteSweat = useAdminOneSweatDELETE(id);
 
     const [ isEdit, setEdit ] = useState(false);
 
@@ -97,13 +100,20 @@ const AdminSweatCard = (props) => {
         udpateData(rsp.data);
     }
 
+    const deleteCard = async () => {
+        await deleteSweat();
+        await props.reloadData();
+    }
+
     useEffect(()=> {
         fetchGetSweat();
+        
     }, [])
 
     //////////RETURN COMPONENT//////////
 
     return(<div className={`admin-sweat-image-editor container ${className}`}>
+        <FontAwesomeIcon className="admin-sweat-image-editor delete-card" icon={faCircleXmarkRegular} onClick={(e) => deleteCard()}/>
         {!isEdit &&
             <AdminSweatImageViewer id={id} color={color} promo={promo} fetchData={() => fetchGetSweat()}/>
         }
