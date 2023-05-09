@@ -44,6 +44,40 @@ export const useAdminSweatImagePOST = (id) => {
     })
 }
 
+export const useAdminSweatImagesGET = (id) => {
+    const token = useSelector((state) => state.adminLog.token);
+    let tab = new Map();
+    return(async (filenames) => {
+        const requestOption = {
+            method: "GET",
+            headers: {
+                Authorization: "Bearer " + token
+            },
+        }
+        await filenames.forEach(async (filename) => {
+            let img = await fetch(`${BACKEND_URL}admin/sweat/image?id=${id}&filename=${filename}`, requestOption)
+                .then(rsp => rsp.blob())
+                .then(blob => URL.createObjectURL(blob));
+            tab.set(filename, img);
+        })
+        return tab;
+    })
+}
+
+export const useAdminSweatFileNamesGET = (id) => {
+    const token = useSelector((state) => state.adminLog.token);
+    const requestOption = {
+        method: "GET",
+        headers: {
+            Authorization: "Bearer " + token
+        }
+    }
+    return(async () => {
+        return await fetch(`${BACKEND_URL}admin/sweat?_id=${id}`, requestOption)
+            .then(rsp => rsp.json())
+            .then(data => data.filenames);
+    })
+}
 export const useAdminSweatImageGET = (id) => {
     const token = useSelector((state) => state.adminLog.token);
     return((filename) => {

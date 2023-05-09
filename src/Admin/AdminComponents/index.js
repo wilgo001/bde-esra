@@ -1,4 +1,4 @@
 import AdminMenu from "./AdminMenu/AdminMenu";
-import AdminSweatImageEditor from "./AdminSweatComponent/AdminSweatImageEditor";
+import { AdminSweatCard } from "./AdminSweatComponent";
 
-export { AdminMenu, AdminSweatImageEditor };
+export { AdminMenu, AdminSweatCard };

@@ -2,7 +2,7 @@ import { faSquarePlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { useAdminManySweatGET, useAdminSweatsPOST } from "../../../../routes/adminConnexionRoutes";
-import { AdminSweatImageEditor } from "../../../AdminComponents";
+import { AdminSweatCard } from "../../../AdminComponents";
 import "./AdminSweatParams.css";
 
 const sweatParamTemplate = {
@@ -30,7 +30,7 @@ const AdminSweatParams = (props) => {
     return(
         <div className="admin-sweat-params container">
             {sweatList.map((sweat) => 
-                <AdminSweatImageEditor 
+                <AdminSweatCard 
                     key={sweat._id}
                     id={sweat._id}
                     promo={sweat.promo}
