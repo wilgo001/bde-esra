@@ -1,8 +1,10 @@
-
+import { Link } from 'react-router-dom'
 
 const SweatStartPage = (props) => {
     return(
-        <div></div>
+        <div>
+            <Link to='/sweat-order/form'>Commender un sweat</Link>
+        </div>
     )
 }
 
